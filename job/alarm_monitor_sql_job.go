@@ -42,7 +42,7 @@ func addAlarmNoticeMonitorSqlJob(sql models.AlarmNoticeMonitorSql) {
 		o.Using(aliasName)
 		_, _ = o.Raw(qsl).Values(&maps)
 
-		logs.Info("run 58 sql : %s  result : %s", qsl, maps)
+		logs.Info("run sql : %s  result : %s", qsl, maps)
 		if len(maps) > 0 {
 			resultJson, _ := json.Marshal(maps)
 			result := string(resultJson)
